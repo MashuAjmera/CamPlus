@@ -14,8 +14,30 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
+from CamPlus.views import index
+import datetime
+# try:
+#     if datetime.date-lastupdat>7:
+#         lastupdat = datetime.date
+#         from trans import busentry
+#         busentry.busupdate()
+#         print("Updated Bus")
+#         from mess import menuentry
+#         menuentry.menuupd()
+#         print("Updated Menu")
+# except:
+#     lastupdat = datetime.date
+#     from trans import busentry
+#     busentry.busupdate()
+#     print("Updated Bus")
+#     from mess import menuentry
+#     menuentry.menuupd()
+#     print("Updated Menu")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',index,name="index"),
+    path('trans/',include("trans.urls")),
+    path('mess/',include("mess.urls")),
 ]

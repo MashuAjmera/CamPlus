@@ -1,0 +1,75 @@
+{% extends "index.html" %}
+{% block title_block %}
+    <title>Mess Menu</title>
+{% endblock %}
+{% block body_block%}
+    <div class="container">
+        {% if cur %}
+        <div class="card text-white bg-dark">
+            <div class="card-header">
+                Currently In Mess
+            </div>
+            <div class="card-body">
+                {{cur | safe}}
+            </div>
+        </div>
+        <br>
+        {% endif %}
+        {% if brk %}
+        <div class="card text-white bg-dark">
+            <div class="card-header">
+                Breakfast
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">7:00 AM To 9:30 AM</h5>
+                {{brk | safe}}
+            </div>
+        </div>
+        <br>
+        {% endif %}
+        {% if lun %}
+        <div class="card text-white bg-dark">
+            <div class="card-header">
+                Lunch
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">12:00 PM To 2:30 PM</h5>
+                {{lun | safe}}
+            </div>
+        </div>
+        <br>
+        {% endif %}
+        {% if snk %}
+        <div class="card text-white bg-dark">
+            <div class="card-header">
+                Snacks
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">05:15 PM To 6:15 PM</h5>
+                {{snk | safe}}
+            </div>
+        </div>
+        <br>
+        {% endif %}
+        {% if din %}
+        <div class="card text-white bg-dark">
+            <div class="card-header">
+                Dinner
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">07:30 PM To 09:30 PM</h5>
+                {{din | safe}}
+            </div>
+        </div>
+        <br>
+        {% endif %}
+        {% if end %}
+        <div class="card text-white bg-dark">
+            <div class="card-body">
+                {{end}}
+            </div>
+        </div>
+        <br>
+        {% endif %}
+    </div>
+{% endblock %}
