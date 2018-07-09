@@ -26,6 +26,8 @@ def menudisp(request):
         dicti['din'] = din
     elif timebetween(datetime.time(7,00),datetime.time(9,30)):
         dicti['cur'] = brk
+        value = datetime.datetime.combine(datetime.date.today(),datetime.time(9,30)) - datetime.datetime.now()
+        dicti['timeleft'] = (datetime.datetime.min + value).time()
         dicti['lun'] = lun
         dicti['snk'] = snk
         dicti['din'] = din
@@ -35,6 +37,9 @@ def menudisp(request):
         dicti['din'] = din
     elif timebetween(datetime.time(12,00),datetime.time(14,30)):
         dicti['cur'] = lun
+        value = datetime.datetime.combine(datetime.date.today(),datetime.time(14,30)) - datetime.datetime.now()
+        dicti['timeleft'] = (datetime.datetime.min + value).time()
+        print(dicti['timeleft'])
         dicti['snk'] = snk
         dicti['din'] = din
     elif timebetween(datetime.time(14,30),datetime.time(17,15)):
@@ -42,11 +47,15 @@ def menudisp(request):
         dicti['din'] = din
     elif timebetween(datetime.time(17,15),datetime.time(18,15)):
         dicti['cur'] = snk
+        value = datetime.datetime.combine(datetime.date.today(),datetime.time(18,15)) - datetime.datetime.now()
+        dicti['timeleft'] = (datetime.datetime.min + value).time()
         dicti['din'] = din
     elif timebetween(datetime.time(18,15),datetime.time(19,30)):
         dicti['din'] = din
     elif timebetween(datetime.time(19,30),datetime.time(21,30)):
         dicti['cur'] = din
+        value = datetime.datetime.combine(datetime.date.today(),datetime.time(21,30)) - datetime.datetime.now()
+        dicti['timeleft'] = (datetime.datetime.min + value).time()
     else:
         dicti['end'] = "Sorry College Will Not Be Providing Any More Meals For The Day."
 

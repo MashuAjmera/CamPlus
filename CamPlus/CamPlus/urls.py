@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path,include
 from CamPlus.views import index
 import datetime
+
 # try:
 #     if datetime.date-lastupdat>7:
 #         lastupdat = datetime.date
@@ -26,6 +27,9 @@ import datetime
 #         from mess import menuentry
 #         menuentry.menuupd()
 #         print("Updated Menu")
+#         from lecture import lectentry
+#         lectentry.timetableupd()
+#         print("Updated Time Table")
 # except:
 #     lastupdat = datetime.date
 #     from trans import busentry
@@ -34,10 +38,13 @@ import datetime
 #     from mess import menuentry
 #     menuentry.menuupd()
 #     print("Updated Menu")
+#     lectentry.timetableupd()
+#     print("Updated Time Table")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index,name="index"),
     path('trans/',include("trans.urls")),
     path('mess/',include("mess.urls")),
+    path('lecture/',include("lecture.urls")),
 ]

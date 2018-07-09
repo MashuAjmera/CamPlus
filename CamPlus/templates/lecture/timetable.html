@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+{% block title_block %}
+    <title>Lecture Time Table</title>
+{% endblock %}
+{% block body_block%}
+<div class="container">
+    {% if timetab %}
+        {% for clas in timetab %}
+        <div class="card text-white bg-dark">
+            <div class="card-header">
+                {{clas.subject}} | {{clas.LT}}
+            </div>
+            <div class="card-body">
+                {{clas.sltst | date:'h:i A'}} - {{clas.slten | date:'h:i A'}} <br> {{clas.teacher}} <br> {{clas.year}}
+            </div>
+        </div>
+        <br>
+        {% endfor %}
+    {% else %}
+        <div class="card text-white bg-dark">
+            <div class="card-header">
+                No Current Class
+            </div>
+            <div class="card-body">
+                Take Rest For A While !!!
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
