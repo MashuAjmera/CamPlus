@@ -1,0 +1,60 @@
+{% extends "login/signin.html" %}
+{% block title_block %}
+    <title>CamPlus Sign Up!</title>
+{% endblock %}
+{% block body_block%}
+    <div class="container">
+        {% if error %}
+            <div class="card">
+                <div class="card-body">
+                    {{ error }}
+                </div>
+            </div>
+            <br>
+        {% endif %}
+        <div class="card">
+            <div class="card-header text-center">
+                Sign Up
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Enter Your Details To Sign Up</h5>
+                <form enctype="multipart/form-data" action="{% url 'login:signup' %}" method="POST">
+                  {% csrf_token %}
+                  <div class="form-row">
+                      <div class="col">
+                          {{user_form.first_name}}
+                      </div>
+                      <div class="col">
+                          {{user_form.last_name}}
+                      </div>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                        {{user_form.email}}
+                  </div>
+                  <div class="form-group">
+                        {{user_form.username}}
+                  </div>
+                  <div class="form-group">
+                        {{user_form.password}}
+                  </div>
+                  <div class="form-row">
+                      <div class="col-9">
+                          <label for="institute">Institute: </label>
+                          {{profile_form.institute}}
+                      </div>
+                      <div class="col-3">
+                          <label for="Year">Batch: </label>
+                          {{profile_form.year}}
+                      </div>
+                  </div>
+                  <br>
+                  <button type="submit" class="btn btn-primary">Sign Up</button>
+                </form>
+            </div>
+            <div class="card-footer text-muted">
+                Already have an account? <a href="{% url 'login:signin' %}">Sign In</a>.
+            </div>
+        </div>
+    </div>
+{% endblock %}

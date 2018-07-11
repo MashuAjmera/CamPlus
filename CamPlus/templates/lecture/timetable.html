@@ -4,26 +4,40 @@
 {% endblock %}
 {% block body_block%}
 <div class="container">
-    {% if timetab %}
-        {% for clas in timetab %}
+    {% if current %}
+        {% for clas in current %}
         <div class="card text-white bg-dark">
             <div class="card-header">
-                {{clas.subject}} | {{clas.LT}}
+                Classes Currently On!
             </div>
             <div class="card-body">
+                <h5 class="card-title">{{clas.subject}} | {{clas.LT}}</h5>
                 {{clas.sltst | date:'h:i A'}} - {{clas.slten | date:'h:i A'}} <br> {{clas.teacher}} <br> {{clas.year}}
             </div>
         </div>
         <br>
         {% endfor %}
-    {% else %}
+    {% endif %}
+    {% if next %}
+        {% for clas in next %}
         <div class="card text-white bg-dark">
             <div class="card-header">
-                No Current Class
+                Classes Starting Soon!
             </div>
             <div class="card-body">
-                Take Rest For A While !!!
+                <h5 class="card-title">{{clas.subject}} | {{clas.LT}}</h5>
+                {{clas.sltst | date:'h:i A'}} - {{clas.slten | date:'h:i A'}} <br> {{clas.teacher}} <br> {{clas.year}}
+            </div>
+        </div>
+        <br>
+        {% endfor %}
+    {% endif %}
+    {% if noclass %}
+        <div class="card text-white bg-dark">
+            <div class="card-body">
+                Take Rest Now ! No More Class Today.
             </div>
         </div>
     {% endif %}
+</div>
 {% endblock %}

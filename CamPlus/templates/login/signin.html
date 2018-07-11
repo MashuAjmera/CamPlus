@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        {% block title_block %}
+            <title>CamPlus Sign In!</title>
+        {% endblock %}
+    </head>
+    <body>
+        <link rel="stylesheet" href="{% static "/css/bootstrap.css" %}">
+        <link rel="stylesheet" href="{% static "/css/master.css" %}">
+        <script src="{% static "js/popper.js" %}"></script>
+        <script src="{% static "js/jquery-3.3.1.js" %}"></script>
+        <script src="{% static "js/bootstrap.js" %}"></script>
+        <nav class="navbar navbar-dark bg-dark text-center">
+            <span class="navbar-brand">Welcome To CamPlus</span>
+        </nav>
+        <br>
+        {% block body_block %}
+            <div class="container">
+                {% if error %}
+                    <div class="card">
+                        <div class="card-body">
+                            Invalid Login Credentials. Please Try Again.
+                        </div>
+                    </div>
+                    <br>
+                {% endif %}
+                <div class="card">
+                    <div class="card-header text-center">
+                        Sign In
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Enter Your Details To Login</h5>
+                        <form action="{% url 'login:signin' %}" method="POST">
+                            {% csrf_token %}
+                            <label for="username">Username:</label><br>
+                            <input type="text" class="form-control" name="username" placeholder="Username">
+                            <br>
+                            <label for="password">Password:</label><br>
+                            <input type="password" class="form-control" name="password" placeholder="Password">
+                            <br>
+                            <button type="submit" class="btn btn-primary">Sign In</button>
+                        </form>
+                    </div>
+                    <div class="card-footer text-muted">
+                        Not A Member? Click Here To <a href="{% url 'login:signup' %}">Sign Up</a>.
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+    </body>
+</html>

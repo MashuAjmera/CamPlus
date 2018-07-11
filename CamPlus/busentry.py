@@ -14,8 +14,8 @@ import time
 from trans.models import buswd,buswe
 
 def busupdate():
-    buswd.objects.all().delete()
-    buswe.objects.all().delete()
+    buswd.objects.filter(institute = 'LNMIIT').delete()
+    buswe.objects.filter(institute = 'LNMIIT').delete()
 
     ctx = ssl.create_default_context()
     ctx.check_hostname = False
@@ -51,11 +51,11 @@ def busupdate():
                     time[0] = str(int(time[0])+12)
                 if we==0:
                     if colmn[2] != '-----':
-                        buswd.objects.create(frm=colmn[2],to=colmn[3],time=datetime.datetime.strptime(time[0]+':'+time[1],'%H:%M').time(),busno=colmn[4],operator='LNMIIT')
+                        buswd.objects.create(institute = 'LNMIIT',frm=colmn[2],to=colmn[3],time=datetime.datetime.strptime(time[0]+':'+time[1],'%H:%M').time(),busno=colmn[4],operator='LNMIIT')
                     if colmn[5] != '-----':
-                        buswd.objects.create(frm=colmn[5],to=colmn[6],time=datetime.datetime.strptime(time[0]+':'+time[1],'%H:%M'),operator='Government')
+                        buswd.objects.create(institute = 'LNMIIT',frm=colmn[5],to=colmn[6],time=datetime.datetime.strptime(time[0]+':'+time[1],'%H:%M'),operator='Government')
                 else:
-                    buswe.objects.create(frm=colmn[2],to=colmn[3],time=datetime.datetime.strptime(time[0]+':'+time[1],'%H:%M').time(),busno=colmn[4],operator='LNMIIT')
+                    buswe.objects.create(institute = 'LNMIIT',frm=colmn[2],to=colmn[3],time=datetime.datetime.strptime(time[0]+':'+time[1],'%H:%M').time(),busno=colmn[4],operator='LNMIIT')
         we = 1
 
 if __name__ == '__main__':

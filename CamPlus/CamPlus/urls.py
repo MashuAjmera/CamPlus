@@ -16,34 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from CamPlus.views import index
-import datetime
 
-# try:
-#     if datetime.date-lastupdat>7:
-#         lastupdat = datetime.date
-#         from trans import busentry
-#         busentry.busupdate()
-#         print("Updated Bus")
-#         from mess import menuentry
-#         menuentry.menuupd()
-#         print("Updated Menu")
-#         from lecture import lectentry
-#         lectentry.timetableupd()
-#         print("Updated Time Table")
-# except:
-#     lastupdat = datetime.date
-#     from trans import busentry
-#     busentry.busupdate()
-#     print("Updated Bus")
-#     from mess import menuentry
-#     menuentry.menuupd()
-#     print("Updated Menu")
-#     lectentry.timetableupd()
-#     print("Updated Time Table")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',index,name="index"),
+    path('index/',index,name="index"),
+    path('',include("login.urls")),
     path('trans/',include("trans.urls")),
     path('mess/',include("mess.urls")),
     path('lecture/',include("lecture.urls")),
