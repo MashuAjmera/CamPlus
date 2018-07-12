@@ -31,12 +31,15 @@
                   <br>
                   <div class="form-group">
                         {{user_form.email}}
+                        <small class="form-text text-muted">We'll never share your email with anyone else.</small>
                   </div>
                   <div class="form-group">
                         {{user_form.username}}
+                        <small class="form-text text-muted">The Username Will Be Unique For All User. It Will be Used For Login.</small>
                   </div>
                   <div class="form-group">
                         {{user_form.password}}
+                        <small class="form-text text-muted">Password Should Be Minimum Of 8 Characters.</small>
                   </div>
                   <div class="form-row">
                       <div class="col-9">
@@ -57,4 +60,8 @@
             </div>
         </div>
     </div>
+    <script>
+        document.getElementById("id_institute").className = "form-control";
+        document.getElementById("id_year").className = "form-control";
+    </script>
 {% endblock %}

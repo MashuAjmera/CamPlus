@@ -70,6 +70,8 @@ def index(request):
         if dy != 'Sunday':
             try:
                 dicti['latest']= buswd.objects.filter(institute=insti,time__gte=tim).order_by('time')[0]
+                value = datetime.datetime.combine(datetime.date.today(),dicti['latest'].time) - datetime.datetime.now()
+                dicti['timeleftnb'] = (datetime.datetime.min + value).time()
             except:
                 pass
             if dicti['latest']:
@@ -77,6 +79,8 @@ def index(request):
         else:
             try:
                 dicti['latest']= buswe.objects.filter(institute=insti,time__gte=tim).order_by('time')[0]
+                value = datetime.datetime.combine(datetime.date.today(),dicti['latest'].time) - datetime.datetime.now()
+                dicti['timeleftnb'] = (datetime.datetime.min + value).time()
             except:
                 pass
             if dicti['latest']:
