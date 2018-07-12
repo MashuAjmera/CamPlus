@@ -9,7 +9,7 @@ class buswd(models.Model):
     busno = models.IntegerField(null=True)
     operator = models.CharField(max_length=256)
     def __str__(self):
-        return self.institute + ' ' + self.time
+        return self.institute + ' ' + self.time.strftime("%H:%M:%S")
 
 class buswe(models.Model):
     institute = models.CharField(max_length=256)
@@ -19,4 +19,4 @@ class buswe(models.Model):
     busno = models.IntegerField(null=True)
     operator = models.CharField(max_length=256)
     def __str__(self):
-        return self.institute + ' ' + self.time
+        return self.institute + ' ' + self.time.strftime("%H:%M:%S")
