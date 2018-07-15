@@ -26,7 +26,7 @@ SECRET_KEY = 'b)n98kd3v@w5j5uz8%nb@obls9!efr7td5+^-1!vr1%!1wntl!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1:8000','camplus.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1','camplus.pythonanywhere.com']
 
 
 # Application definition

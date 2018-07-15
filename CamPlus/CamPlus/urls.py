@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path,include
 from CamPlus.views import index
 
+admin.site.site_header = 'CamPlus Adminsistration'
+admin.site.site_title = 'CamPlus Adminsistration'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
