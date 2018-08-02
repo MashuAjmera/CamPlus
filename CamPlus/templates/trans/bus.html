@@ -36,7 +36,8 @@
                 <th scope="col">From</th>
                 <th scope="col">To</th>
                 <th scope="col">Operator</th>
-                <th scope="col">Bus Number</th>
+                <th scope="col">
+                <div id="mobile-cmpt">Bus Number</div></th>
             </tr>
         </thead>
         <tbody>
@@ -46,7 +47,9 @@
                     <td>{{bus.frm}}</td>
                     <td>{{bus.to}}</td>
                     <td>{{bus.operator}}</td>
-                    <td>{{bus.busno}}</td>
+                    <td>
+                    <div id="mobile-cmpt">{{bus.busno}}</div></td>
+
                 </tr>
             {% endfor %}
         </tbody>

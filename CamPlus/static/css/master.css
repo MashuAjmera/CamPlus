@@ -1,3 +1,8 @@
 .tablebutt{
     background-color: #2C3034
 }
+@media (max-width: 1000px){
+  #mobile-cmpt {
+    display: none;
+  }
+}
