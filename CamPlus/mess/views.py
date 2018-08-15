@@ -18,8 +18,10 @@ def menudisp(request):
     dy=datetime.datetime.now().strftime("%A")
     if insti == 'LNMIIT':
         dicti['mis'] = "https://erp.lnmiit.ac.in/mis/"
+        dicti['lib'] = "https://172.22.2.26/opac/"
     else:
         dicti['mis'] = '#'
+        dicti['lib'] = '#'
     try:
         men=menu.objects.get(institute = insti,day=dy)
         brk = men.brk

@@ -5,7 +5,7 @@
 {% block body_block%}
     <div class="container">
         {% if cur %}
-        <div class="card text-white bg-dark">
+        <div class="card">
             <div class="card-header">
                 Currently In Mess
             </div>
@@ -17,7 +17,7 @@
         <br>
         {% endif %}
         {% if brk %}
-        <div class="card text-white bg-dark">
+        <div class="card">
             <div class="card-header">
                 Breakfast
             </div>
@@ -29,11 +29,11 @@
         <br>
         {% endif %}
         {% if lun %}
-        <div class="card text-white bg-dark">
+        <div class="card">
             <div class="card-header">
                 Lunch
             </div>
-            <div class="card-body">
+            <div class="card-body" >
                 <h5 class="card-title">12:00 PM To 2:30 PM</h5>
                 {{lun | safe}}
             </div>
@@ -41,11 +41,11 @@
         <br>
         {% endif %}
         {% if snk %}
-        <div class="card text-white bg-dark">
+        <div class="card">
             <div class="card-header">
                 Snacks
             </div>
-            <div class="card-body">
+            <div class="card-body" >
                 <h5 class="card-title">05:15 PM To 6:15 PM</h5>
                 {{snk | safe}}
             </div>
@@ -53,7 +53,7 @@
         <br>
         {% endif %}
         {% if din %}
-        <div class="card text-white bg-dark">
+        <div class="card">
             <div class="card-header">
                 Dinner
             </div>
@@ -65,12 +65,12 @@
         <br>
         {% endif %}
         {% if end %}
-        <div class="card text-white bg-dark">
-            <div class="card-body">
+        <div class="card">
+            <div class="card-body" >
                 {{end}}
             </div>
         </div>
         <br>
         {% endif %}
-    </div>
+    </div><br>
 {% endblock %}

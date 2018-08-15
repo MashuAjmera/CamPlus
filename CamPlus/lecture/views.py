@@ -13,8 +13,10 @@ def ttdisp(request):
     yr = request.user.profile.year
     if insti == 'LNMIIT':
         dicti['mis'] = "https://erp.lnmiit.ac.in/mis/"
+        dicti['lib'] = "https://172.22.2.26/opac/"
     else:
         dicti['mis'] = '#'
+        dicti['lib'] = '#'
     now = datetime.datetime.now()
     t = now.strftime("%H:%M:%S")
     d = now.strftime("%A")

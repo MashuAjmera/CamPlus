@@ -15,14 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from CamPlus.views import index
+from CamPlus import views
 
 admin.site.site_header = 'CamPlus Administration'
 admin.site.site_title = 'CamPlus Administration'
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('index/',index,name="index"),
+    path('manshu/administrator/', admin.site.urls),
+    path('index/',views.index,name="index"),
+    path('about/',views.about,name="about"),
+    path('terms/',views.terms,name="terms"),
+    path('cookies/',views.cookies,name="cookies"),
+    path('privacy/',views.privacy,name="privacy"),
+    path('feedback/',views.feedback,name="feedback"),
     path('',include("login.urls")),
     path('trans/',include("trans.urls")),
     path('mess/',include("mess.urls")),

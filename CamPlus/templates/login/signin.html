@@ -5,24 +5,27 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         {% block title_block %}
-            <title>CamPlus Sign In!</title>
+            <title>Sign In- CamPlus</title>
         {% endblock %}
         <link rel="stylesheet" href="{% static "/css/bootstrap.css" %}">
         <link rel="stylesheet" href="{% static "/css/master.css" %}">
+        <link rel="stylesheet" href="{% static "/css/fontawesome.css" %}">
     </head>
     <body>
         <script src="{% static "js/popper.js" %}"></script>
         <script src="{% static "js/jquery-3.3.1.js" %}"></script>
         <script src="{% static "js/bootstrap.js" %}"></script>
-        <nav class="navbar navbar-dark bg-dark text-center">
-            <span class="navbar-brand">Welcome To CamPlus</span>
+        <nav class="navbar text-center">
+          <div class="container">
+            <a class="navbar-brand" href="{% url 'login:signin' %}">Welcome To CamPlus</a>
+          </div>
         </nav>
         <br>
         {% block body_block %}
             <div class="container">
                 {% if error %}
                     <div class="card">
-                        <div class="card-body">
+                        <div class="card-header">
                             Invalid Login Credentials. Please Try Again.
                         </div>
                     </div>
@@ -37,19 +40,95 @@
                         <form action="{% url 'login:signin' %}" method="POST">
                             {% csrf_token %}
                             <label for="username">Username:</label><br>
-                            <input type="text" class="form-control" name="username" placeholder="Username">
+                            <input type="text" class="form-control formback" name="username" placeholder="Username">
                             <br>
                             <label for="password">Password:</label><br>
-                            <input type="password" class="form-control" name="password" placeholder="Password">
+                            <input type="password" class="form-control formback" name="password" placeholder="Password">
                             <br>
-                            <button type="submit" class="btn btn-primary">Sign In</button>
+                            <button type="submit" class="btn">Sign In</button>
                         </form>
                     </div>
-                    <div class="card-footer text-muted">
+                    <div class="card-footer">
                         Not A Member? Click Here To <a href="{% url 'login:signup' %}">Sign Up</a>.
                     </div>
                 </div>
             </div>
-        {% endblock %}
+              {% endblock %}<br>
+    <footer class="page-footer font-small">
+
+        <div style="background-color: #17252A;">
+          <div class="container">
+
+            <div class="row py-4 d-flex align-items-center">
+
+              <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                <h6 class="mb-0">Get connected with us on social networks!</h6>
+              </div>
+              <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+                <a class="fb-ic" href="http://www.facebook.com">
+                  <i class="fab fa-facebook-f white-text mr-4"> </i>
+                </a>
+                <a class="gh-ic" href="http://www.facebook.com">
+                  <i class="fab fa-github mr-4"> </i>
+                </a>
+                <a class="li-ic" href="http://www.facebook.com">
+                  <i class="fab fa-linkedin-in white-text mr-4"> </i>
+                </a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container text-center text-md-left mt-5">
+
+          <div class="row mt-3">
+
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+              <h6 class="text-uppercase font-weight-bold">CamPlus</h6>
+              <hr class="mb-4 mt-0 d-inline-block mx-auto" color="white" style="width: 60px">
+              <p style="color: #FEFFFF">It's a web app that fits for every college students' needs. Keep track of all your upcoming events. Get lecture details. Plan your trips according to the best bus that fits you. Reminders for mess meals. And there are much more features to add.
+    </p>
+
+            </div>
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+              <h6 class="text-uppercase font-weight-bold">Legal</h6>
+              <hr class="mb-4 mt-0 d-inline-block mx-auto" color="white" style="width: 60px;">
+              <p>
+                <a href="{% url 'about' %}">About</a>
+              </p>
+              <p>
+                <a href="{% url 'privacy' %}">Privacy</a>
+              </p>
+              <p>
+                <a href="{% url 'terms' %}">Terms</a>
+              </p>
+              <p>
+                <a href="{% url 'cookies' %}">Cookies</a>
+              </p><p>
+                <a href="{% url 'feedback' %}">Feedback</a>
+              </p>
+            </div>
+            <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-md-0 mb-4">
+              <h6 class="text-uppercase font-weight-bold">Contact</h6>
+              <hr class="mb-4 mt-0 d-inline-block mx-auto" color="#FEFFFF" style="width: 60px;">
+              <p>
+                <i class="fa fa-home mr-3"></i><a href="https://goo.gl/maps/qCfPNRbe6u52" target="_blank"> LNMIIT, Jaipur, RJ, India</a></p>
+              <p>
+                <i class="fa fa-envelope mr-3"></i><a href="mailto:camplustechnologies@gmail.com" target="_blank"> camplustechnologies@gmail.com</a></p>
+              <p>
+                <i class="fa fa-phone mr-3"></i> +91 7073 637246</p>
+              <p >
+                <i class="fa fa-phone mr-3"></i> +91 9330 522033</p>
+            </div>
+          </div>
+        </div>
+        <div class="container footer-copyright text-center py-3 col-md-12 col-lg-12 col-xl-12" style="background-color: #17252A; color:#FEFFFF">© 2018
+          <a href="{% url 'login:signin' %}"> CamPlus Technologies</a>. All Rights Reserved.
+        </div>
+      </footer>
     </body>
 </html>

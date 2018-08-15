@@ -14,8 +14,10 @@ def bus(request):
     insti = request.user.profile.institute
     if insti == 'LNMIIT':
         dicti['mis'] = "https://erp.lnmiit.ac.in/mis/"
+        dicti['lib'] = "https://172.22.2.26/opac/"
     else:
         dicti['mis'] = '#'
+        dicti['lib'] = '#'
     now = datetime.datetime.now()
     t = now.strftime("%H:%M:%S")
     if now.strftime("%A") != 'Sunday':
@@ -38,8 +40,10 @@ def buslnm(request):
     insti = request.user.profile.institute
     if insti == 'LNMIIT':
         dicti['mis'] = "https://erp.lnmiit.ac.in/mis/"
+        dicti['lib'] = "https://172.22.2.26/opac/"
     else:
         dicti['mis'] = '#'
+        dicti['lib'] = '#'
     now = datetime.datetime.now()
     t = now.strftime("%H:%M:%S")
     try:
@@ -70,8 +74,10 @@ def buscit(request):
     insti = request.user.profile.institute
     if insti == 'LNMIIT':
         dicti['mis'] = "https://erp.lnmiit.ac.in/mis/"
+        dicti['lib'] = "https://172.22.2.26/opac/"
     else:
         dicti['mis'] = '#'
+        dicti['lib'] = '#'
     now = datetime.datetime.now()
     t = now.strftime("%H:%M:%S")
     try:
@@ -101,8 +107,10 @@ def busoth(request):
     insti = request.user.profile.institute
     if insti == 'LNMIIT':
         dicti['mis'] = "https://erp.lnmiit.ac.in/mis/"
+        dicti['lib'] = "https://172.22.2.26/opac/"
     else:
         dicti['mis'] = '#'
+        dicti['lib'] = '#'
     now = datetime.datetime.now()
     t = now.strftime("%H:%M:%S")
     try:
