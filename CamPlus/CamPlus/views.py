@@ -106,7 +106,7 @@ def about(request):
     if request.user.is_authenticated:
         dicti['ext'] = 'index.html'
     else:
-        dicti['ext'] = 'login\signin.html'
+        dicti['ext'] = 'login/signin.html'
     return render(request,'about.html',context = dicti)
 def terms(request):
     dicti = dict()
@@ -122,7 +122,7 @@ def terms(request):
     if request.user.is_authenticated:
         dicti['ext'] = 'index.html'
     else:
-        dicti['ext'] = 'login\signin.html'
+        dicti['ext'] = 'login/signin.html'
     return render(request,'terms.html',context = dicti)
 def feedback(request):
     dicti = dict()
@@ -138,14 +138,14 @@ def feedback(request):
     if request.user.is_authenticated:
         dicti['ext'] = 'index.html'
     else:
-        dicti['ext'] = 'login\signin.html'
+        dicti['ext'] = 'login/signin.html'
     return render(request,'feedback.html',context = dicti)
 def privacy(request):
     dicti = dict()
     if request.user.is_authenticated:
         dicti['ext'] = 'index.html'
     else:
-        dicti['ext'] = 'login\signin.html'
+        dicti['ext'] = 'login/signin.html'
     return render(request,'privacy.html',context = dicti)
 def cookies(request):
     dicti = dict()
@@ -161,5 +161,5 @@ def cookies(request):
     if request.user.is_authenticated:
         dicti['ext'] = 'index.html'
     else:
-        dicti['ext'] = 'login\signin.html'
+        dicti['ext'] = 'login/signin.html'
     return render(request,'cookies.html',context = dicti)
