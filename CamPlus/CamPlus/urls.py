@@ -29,7 +29,9 @@ urlpatterns = [
     path('privacy/',views.privacy,name="privacy"),
     path('feedback/',views.feedback,name="feedback"),
     path('',include("login.urls")),
+    path('', include('pwa.urls')),
     path('trans/',include("trans.urls")),
     path('mess/',include("mess.urls")),
     path('lecture/',include("lecture.urls")),
+    path('', include('pwa.urls')),
 ]

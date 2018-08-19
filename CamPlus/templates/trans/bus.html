@@ -10,13 +10,13 @@
                     Next Bus
                 </div>
                 <div class="card-body" >
-                    <h5 class="card-title">Bus Wil Depart In <span id="timeleftnb">{{timeleftnb | date:'H:i'}}</span></h5>
+                    <h5 class="card-title">Bus Will Depart In <span id="timeleftnb">{{timeleftnb | date:'H:i'}}</span></h5>
                     From {{latest.frm}} To {{latest.to}} Operated By {{latest.operator}} {% if latest.busno %}Having Bus Number {{latest.busno}}{% endif %}
                 </div>
             </div>
         <br>
-            Route :&ensp;
-            <div class="btn-group" role="group" aria-label="Basic example">
+
+            <div class="btn-group" role="group" aria-label="Basic example" style="color: #17252A">Route:&ensp;
                 <a href="{% url 'trans:bus' %}" class="btn tablebutt" style="background-color: #2B7A78;">All</a>
                 <a href="{% url 'trans:buslnm' %}" class="btn" style="background-color: #3AAFA9;">From LNMIIT</a>
                 <a href="{% url 'trans:buscit' %}" class="btn tablebutt" style="background-color: #2B7A78;">To LNMIIT</a>

@@ -16,6 +16,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMP_DIR  = os.path.join(BASE_DIR,'templates')
 STATIC_DIR = os.path.join(BASE_DIR,"static")
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'static/js', 'serviceworker.js')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'mess',
     'trans',
     'login',
+    'pwa',
 ]
 
 MIDDLEWARE = [
@@ -86,7 +88,7 @@ DATABASES = {
 }
 
 PASSWORD_HASHERS = [
-    #'django.contrib.auth.hashers.Argon2PasswordHasher',
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
     'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
     'django.contrib.auth.hashers.BCryptPasswordHasher',
     'django.contrib.auth.hashers.PBKDF2PasswordHasher',

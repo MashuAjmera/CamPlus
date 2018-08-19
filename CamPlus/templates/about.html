@@ -3,30 +3,52 @@
       <title>About</title>
   {% endblock %}
   {% block body_block %}
+  {% load static %}
       <div class="container">
         <div class="card">
           <div class="card-header text-center">
             About
-        </div></div><br>
-            <div class="card ">
+        </div>
+    </div>
+    <br>
+            <div class="card" id="Mashu-Ajmera">
           <div class="card-body row">
-              <div class="col-md-3 col-lg-4 col-xl-3">
-                  <img src="https://avatars1.githubusercontent.com/u/32427540?v=4" alt="Avatar" class="gravatar">
-              </div>
-            <div class="col-md-9 col-lg-9 col-xl-9">
-            <h5 class="card-title">Mashu Ajmera</h5>
-            <h6 class="card-subtitle mb-2">Front End Designer</h6>
-            <p class="card-text">A full stack Web Developer and Content Writer.</p>
-            <a href="http://www.instagram.com/mashuajmera" class="card-link">Instagram</a>
-            <a href="http://www.github.com/MashuAjmera" class="card-link">GitHub</a>
-        </div></div></div><br>
-            <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Anshu Musaddi</h5>
-            <h6 class="card-subtitle mb-2">Back End Developer</h6>
-            <p class="card-text">A full stack Web Developer and Machine Learning geek.</p>
-            <a href="https://in.linkedin.com/in/anshumusaddi" class="card-link">LinkedIn</a>
-            <a href="http://www.github.com/anshumusaddi" class="card-link">GitHub</a>
+              <div class="col-md-3 col-lg-3 col-xl-3">
+                  <img src="{% static "/images/MashuAjmera.png"%}" alt="Mashu Ajmera" class="img-fluid about-image">
+            </div>
+            <div class="col-md-9 col-lg-9 col-xl-9"><br>
+            <h2 class="card-title">Mashu Ajmera</h2>
+            <h5 class="card-subtitle mb-2">Front End Designer</h5>
+            <p class="card-text">Mashu Ajmera is the front-end developer and co-founder of CamPlus, a web app that keeps track of all your upcoming events, gets lecture details, plan your trips according to the best bus that fits you, reminds for mess meals. He is responsible for the company's overall vision and strategy as well as day-to-day operations.<br><br>
+
+Since the beginning, Mashu has focused on simplicity and inspiring creativity through solving problems with thoughtful product design. As a result, CamPlus has become the home for every college students' needs.<br><br>
+
+A native of Guwahati, India, Mashu is pursuing B. Tech. in Computer Science and Engineering from LNMIIT, Jaipur. When he is not writing scripts, he is writing a blog or spending time with his friends and family.</p><br>
+            <a href="https://in.linkedin.com/in/mashuajmera" class="card-link"><i class="fab fa-linkedin-in mr-4 fa-lg"> </i></a>
+            <a href="http://www.instagram.com/mashuajmera" class="card-link"><i class="fab fa-instagram mr-4 fa-lg"> </i></a>
+            <a href="http://www.github.com/MashuAjmera" class="card-link"><i class="fab fa-github mr-4 fa-lg"> </i></a>
+            <a href="mailto:mashuajmera@gmail.com" class="card-link"><i class="fas fa-envelope mr-4 fa-lg"> </i></a>
+            <a href="tel:+917073637246" class="card-link"><i class="fas fa-phone mr-4 fa-lg"> </i></a>
+            </div>
+        </div></div><br>
+            <div class="card" id="Anshu-Musaddi">
+          <div class="card-body row">
+              <div class="col-md-3 col-lg-3 col-xl-3">
+                  <img src="{% static "/images/AnshuMusaddi.jpg"%}" alt="Anshu Musaddi" class="img-fluid about-image">
+            </div>
+            <div class="col-md-9 col-lg-9 col-xl-9"><br>
+            <h2 class="card-title">Anshu Musaddi</h2>
+            <h5 class="card-subtitle mb-2">Back End Developer</h5>
+            <p class="card-text">Anshu Musaddi is the back-end developer and co-founder of CamPlus, a web app that keeps track of all your upcoming events, gets lecture details, plan your trips according to the best bus that fits you, reminds for mess meals. As the head of engineering, Mike focuses on building products that bring out the creativity in all of us.<br><br>
+
+Since the beginning, Anshu has focused on simplicity and inspiring creativity through solving problems with thoughtful product design. As a result, CamPlus has become the home for every college students' needs.<br><br>
+
+A native of Kolkata, India, Anshu is pursuing B. Tech. in Computer Science and Engineering from LNMIIT, Jaipur. Except for a Full Stack Web Developer, Anshu is also a machine learning enthusiast and a competitive coder.</p><br>
+            <a href="https://in.linkedin.com/in/anshumusaddi" class="card-link"><i class="fab fa-linkedin-in mr-4 fa-lg"> </i></a>
+            <a href="http://www.github.com/anshumusaddi" class="card-link"><i class="fab fa-github mr-4 fa-lg"> </i></a>
+            <a href="mailto:anshumusaddi@gmail.com" class="card-link"><i class="fas fa-envelope mr-4 fa-lg"> </i></a>
+            <a href="tel:+919330522033" class="card-link"><i class="fas fa-phone mr-4 fa-lg"> </i></a>
+            </div>
           </div>
         </div>
       </div>
