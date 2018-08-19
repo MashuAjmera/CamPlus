@@ -94,48 +94,48 @@ def index(request):
 
 def about(request):
     dicti = dict()
-    insti = request.user.profile.institute
-    if request.user.is_staff == True:
-        dicti['su'] = True
-    if insti == 'LNMIIT':
-        dicti['mis'] = "https://erp.lnmiit.ac.in/mis/"
-        dicti['lib'] = "https://172.22.2.26/opac/"
-    else:
-        dicti['mis'] = '#'
-        dicti['lib'] = '#'
     if request.user.is_authenticated:
+        insti = request.user.profile.institute
+        if request.user.is_staff == True:
+            dicti['su'] = True
+        if insti == 'LNMIIT':
+            dicti['mis'] = "https://erp.lnmiit.ac.in/mis/"
+            dicti['lib'] = "https://172.22.2.26/opac/"
+        else:
+            dicti['mis'] = '#'
+            dicti['lib'] = '#'
         dicti['ext'] = 'index.html'
     else:
         dicti['ext'] = 'login/signin.html'
     return render(request,'about.html',context = dicti)
 def terms(request):
     dicti = dict()
-    insti = request.user.profile.institute
-    if request.user.is_staff == True:
-        dicti['su'] = True
-    if insti == 'LNMIIT':
-        dicti['mis'] = "https://erp.lnmiit.ac.in/mis/"
-        dicti['lib'] = "https://172.22.2.26/opac/"
-    else:
-        dicti['mis'] = '#'
-        dicti['lib'] = '#'
     if request.user.is_authenticated:
+        insti = request.user.profile.institute
+        if request.user.is_staff == True:
+            dicti['su'] = True
+        if insti == 'LNMIIT':
+            dicti['mis'] = "https://erp.lnmiit.ac.in/mis/"
+            dicti['lib'] = "https://172.22.2.26/opac/"
+        else:
+            dicti['mis'] = '#'
+            dicti['lib'] = '#'
         dicti['ext'] = 'index.html'
     else:
         dicti['ext'] = 'login/signin.html'
     return render(request,'terms.html',context = dicti)
 def feedback(request):
     dicti = dict()
-    insti = request.user.profile.institute
-    if request.user.is_staff == True:
-        dicti['su'] = True
-    if insti == 'LNMIIT':
-        dicti['mis'] = "https://erp.lnmiit.ac.in/mis/"
-        dicti['lib'] = "https://172.22.2.26/opac/"
-    else:
-        dicti['mis'] = '#'
-        dicti['lib'] = '#'
     if request.user.is_authenticated:
+        insti = request.user.profile.institute
+        if request.user.is_staff == True:
+            dicti['su'] = True
+        if insti == 'LNMIIT':
+            dicti['mis'] = "https://erp.lnmiit.ac.in/mis/"
+            dicti['lib'] = "https://172.22.2.26/opac/"
+        else:
+            dicti['mis'] = '#'
+            dicti['lib'] = '#'
         dicti['ext'] = 'index.html'
     else:
         dicti['ext'] = 'login/signin.html'
@@ -143,22 +143,31 @@ def feedback(request):
 def privacy(request):
     dicti = dict()
     if request.user.is_authenticated:
+        insti = request.user.profile.institute
+        if request.user.is_staff == True:
+            dicti['su'] = True
+        if insti == 'LNMIIT':
+            dicti['mis'] = "https://erp.lnmiit.ac.in/mis/"
+            dicti['lib'] = "https://172.22.2.26/opac/"
+        else:
+            dicti['mis'] = '#'
+            dicti['lib'] = '#'
         dicti['ext'] = 'index.html'
     else:
         dicti['ext'] = 'login/signin.html'
     return render(request,'privacy.html',context = dicti)
 def cookies(request):
     dicti = dict()
-    insti = request.user.profile.institute
-    if request.user.is_staff == True:
-        dicti['su'] = True
-    if insti == 'LNMIIT':
-        dicti['mis'] = "https://erp.lnmiit.ac.in/mis/"
-        dicti['lib'] = "https://172.22.2.26/opac/"
-    else:
-        dicti['mis'] = '#'
-        dicti['lib'] = '#'
     if request.user.is_authenticated:
+        insti = request.user.profile.institute
+        if request.user.is_staff == True:
+            dicti['su'] = True
+        if insti == 'LNMIIT':
+            dicti['mis'] = "https://erp.lnmiit.ac.in/mis/"
+            dicti['lib'] = "https://172.22.2.26/opac/"
+        else:
+            dicti['mis'] = '#'
+            dicti['lib'] = '#'
         dicti['ext'] = 'index.html'
     else:
         dicti['ext'] = 'login/signin.html'
