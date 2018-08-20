@@ -1,0 +1,20 @@
+{
+  "short_name": "CamPlus",
+  "name": "CamPlus",
+  "icons": [
+    {
+      "src": "/static/images/favicon.png",
+      "type": "image/png",
+      "sizes": "86x86"
+    },
+    {
+      "src": "/static/images/favicon-144x144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#3AAFA9",
+  "display": "standalone",
+  "theme_color": "#17252A"
+}

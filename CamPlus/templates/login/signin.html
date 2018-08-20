@@ -5,9 +5,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="manifest" href="{% static "/js/manifest.json" %}">
         {% progressive_web_app_meta %}
         {% block title_block %}
-            <title>Sign In- CamPlus</title>
+            <title>Sign In</title>
         {% endblock %}
         <link rel="icon" href="{% static '/images/favicon.png' %}">
         <link rel="stylesheet" href="{% static "/css/bootstrap.css" %}">
